@@ -1,0 +1,27 @@
+.photo-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.photo-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
+.photo__title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.photo__price {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+
+.photo__description {
+    text-align: center;
+}

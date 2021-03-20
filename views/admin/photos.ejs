@@ -1,0 +1,44 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/photo.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <% if (photos.length > 0) { %>
+                    <div class="grid">
+                        <% for (let photo of photos) { %>
+                            <article class="card photo-item">
+                                <header class="card__header">
+                                    <h1 class="photo__title">
+                                        <%= photo.title %>
+                                    </h1>
+                                </header>
+                                <div class="card__image">
+                                    <img src="<%= photo.imageUrl %>" alt="<%= photo.title %>">
+                                </div>
+                                <div class="card__content">
+                                    <h2 class="photo__price">$
+                                        <%= photo.price %>
+                                    </h2>
+                                    <p class="photo__description">
+                                        <%= photo.description %>
+                                    </p>
+                                </div>
+                                <div class="card__actions">
+                                    <a href="/admin/edit-photo/<%= photo.id %>?edit=true" class="btn">Edit</a>
+                                    <form action="/admin/delete-photo" method="POST">
+                                        <input type="hidden" value="<%= photo.id %>" name="photoId">
+                                        <button class="btn" type="submit">Delete</button>
+                                    </form>
+
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1>No Photos Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>
