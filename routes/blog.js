@@ -12,4 +12,6 @@ router.get('/photos', blogController.getPhotos);
 
 router.get('/photos/:photoId', blogController.getPhoto);
 
+router.get('/aboutme', blogController.getAboutMe);
+
 module.exports = router;

@@ -30,3 +30,10 @@ exports.getIndex = (req, res, next) => {
     });
   });
 };
+
+exports.getAboutMe = (req, res, next) => {
+  res.render('blog/aboutme', {
+    pageTitle: 'About Me',
+    path: '/aboutme'
+  });
+};
